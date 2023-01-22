@@ -1,0 +1,32 @@
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: non-privileged
+spec:
+  privileged: false
+  allowPrivilegeEscalation: false
+  allowedCapabilities: []
+  volumes:
+    - '*'
+  hostNetwork: false
+  hostPorts:
+    - min: 0
+      max: 65535
+  hostIPC: false
+  hostPID: false
+  runAsUser:
+    rule: 'MustRunAsNonRoot'
+  seLinux:
+    rule: 'RunAsAny'
+  supplementalGroups:
+    rule: 'MustRunAs'
+    ranges:
+      - min: 1
+        max: 65535
+  fsGroup:
+    rule: 'MustRunAs'
+    ranges:
+      - min: 1
+        max: 65535
+
+

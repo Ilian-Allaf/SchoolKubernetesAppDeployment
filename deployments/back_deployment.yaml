@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: web-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      securityContext:
+        # Use the non-privileged PSP
+        podSecurityPolicyName: non-privileged_psp
+      containers:
+        - name: backend
+          image: my-backend-image:latest
+          ports:
+            - containerPort: 8080
+              protocol: TCP
