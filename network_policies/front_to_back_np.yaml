@@ -4,11 +4,10 @@ metadata:
 name: allow-frontend-to-backend
 namespace: web-app
 spec:
-podSelector:
-matchLabels:
-app: backend
+  podSelector:
+  matchLabels:
+  app: backend
 ingress:
-
 from:
 podSelector:
 matchLabels:
