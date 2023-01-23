@@ -14,8 +14,6 @@ spec:
         app: database
     spec:
       securityContext:
-        # Use the database PSP
-        podSecurityPolicyName: database_psp
       containers:
         - name: database
           image: mysql:5.7
@@ -28,3 +26,8 @@ spec:
           ports:
             - containerPort: 3306
               protocol: TCP
+          securityContext:
+            allowPrivilegeEscalation: false
+            privileged: false
+            runAsNonRoot: true
+            readOnlyRootFilesystem: false
