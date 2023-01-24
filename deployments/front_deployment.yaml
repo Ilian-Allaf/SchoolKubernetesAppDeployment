@@ -14,11 +14,16 @@ spec:
         app: frontend
     spec:
       securityContext:
-        # Use the non-privileged PSP
-        podSecurityPolicyName: non-privileged_psp
       containers:
         - name: frontend
           image: nginx:latest
           ports:
             - containerPort: 80
               protocol: TCP
+          securityContext:
+            allowPrivilegeEscalation: false
+            privileged: false
+            runAsNonRoot: true
+            readOnlyRootFilesystem: true
+
+
