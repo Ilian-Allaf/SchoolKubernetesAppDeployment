@@ -14,14 +14,14 @@ spec:
         app: backend
     spec:
       securityContext:
-        containers:
-          - name: backend
-            image: my-backend-image:latest
-            ports:
-              - containerPort: 8080
-                protocol: TCP
-            securityContext:
-              allowPrivilegeEscalation: false
-              privileged: false
-              runAsNonRoot: true
-              readOnlyRootFilesystem: true
+      containers:
+        - name: backend
+          image: tanguylichau/k8s_back
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+          securityContext:
+            allowPrivilegeEscalation: false
+            privileged: false
+            runAsNonRoot: true
+            readOnlyRootFilesystem: true

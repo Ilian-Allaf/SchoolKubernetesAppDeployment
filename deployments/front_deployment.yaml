@@ -16,7 +16,7 @@ spec:
       securityContext:
       containers:
         - name: frontend
-          image: nginx:latest
+          image: tanguylichau/k8s_front
           ports:
             - containerPort: 80
               protocol: TCP
