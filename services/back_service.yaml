@@ -1,13 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-name: backend-service
-namespace: web-app
+  name: backend-service
+  namespace: web-app
 spec:
-type: ClusterIP
-ports:
+  type: ClusterIP
+  ports:
+    - port: 3000
+      protocol: TCP
+  selector:
+    app: backend
 
-port: 8080
-protocol: TCP
-selector:
-app: backend
+
+
