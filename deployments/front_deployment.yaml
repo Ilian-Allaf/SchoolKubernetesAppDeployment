@@ -25,5 +25,3 @@ spec:
             privileged: false
             runAsNonRoot: true
             readOnlyRootFilesystem: true
-
-
