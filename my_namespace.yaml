@@ -4,4 +4,3 @@ metadata:
   name: web-app
   labels:
     pod-security-policy-admission: psp-enforce
-
