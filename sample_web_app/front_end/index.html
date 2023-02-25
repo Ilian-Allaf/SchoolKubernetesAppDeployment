@@ -11,9 +11,10 @@
 </body>
 <script>
     fetch('http://localhost:3000').then(
-        (response) => {
-            console.log('response : ' + response)
-            document.getElementById('app').innerHTML = response.data.message
+        async (response) => {
+            const jsonResponse = JSON.stringify(await response.json());
+            console.log('response : ' + jsonResponse)
+            document.getElementById('app').innerHTML = jsonResponse;
         }
     )
     .catch(error => console.log(error))
