@@ -6,7 +6,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 3306
+    - port: 27017
       protocol: TCP
   selector:
     app: database
