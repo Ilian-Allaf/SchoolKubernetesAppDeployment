@@ -13,10 +13,9 @@ spec:
       labels:
         app: backend
     spec:
-      securityContext:
       containers:
         - name: backend
-          image: ilianallaf/backimage:latest
+          image: tanguylichau/backendapp
           ports:
             - containerPort: 3000
               protocol: TCP
