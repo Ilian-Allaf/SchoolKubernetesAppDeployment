@@ -13,7 +13,6 @@ spec:
       labels:
         app: frontend
     spec:
-      securityContext:
       containers:
         - name: frontend
           image: ilianallaf/frontimage:latest
@@ -24,4 +23,5 @@ spec:
             allowPrivilegeEscalation: false
             privileged: false
             runAsNonRoot: true
+            runAsUser: 1000
             readOnlyRootFilesystem: true
