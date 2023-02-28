@@ -16,7 +16,7 @@ spec:
       securityContext:
       containers:
         - name: backend
-          image: tanguylichau/k8s_back
+          image: ilianallaf/backimage:latest
           ports:
             - containerPort: 3000
               protocol: TCP

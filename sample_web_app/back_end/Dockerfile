@@ -1,5 +1,9 @@
 FROM node:16-alpine
 
+#RUN adduser --system --group --no-create-home myuser
+
+#USER myuser
+
 # Create app directory
 WORKDIR /usr/src/app
 

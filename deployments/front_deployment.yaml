@@ -16,7 +16,7 @@ spec:
       securityContext:
       containers:
         - name: frontend
-          image: tanguylichau/k8s_front
+          image: ilianallaf/frontimage:latest
           ports:
             - containerPort: 80
               protocol: TCP

@@ -16,9 +16,9 @@ spec:
       securityContext:
       containers:
         - name: database
-          image: mysql:5.7
+          image: mongo:latest
           ports:
-            - containerPort: 3306
+            - containerPort: 27017
               protocol: TCP
           securityContext:
             allowPrivilegeEscalation: false
