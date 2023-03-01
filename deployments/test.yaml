@@ -15,12 +15,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: tanguylichau/frontendapp:3.0
+          image: tanguylichau/frontendapp:9.0
           ports:
             - containerPort: 80
-          securityContext:
-            allowPrivilegeEscalation: false
-            privileged: false
-            runAsNonRoot: true
-            runAsUser: 1000
-            readOnlyRootFilesystem: true

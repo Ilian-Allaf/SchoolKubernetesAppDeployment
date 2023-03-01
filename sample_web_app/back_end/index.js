@@ -11,7 +11,7 @@ const Cat = mongoose.model("Cat", { name: String });
 
 async function main() {
   mongoose.set("strictQuery", true);
-  await mongoose.connect("mongodb://localhost:27017");
+  await mongoose.connect("mongodb://database-service:27017");
   console.log("Connected to MongoDB");
   const kitty = new Cat({ name: "Zildjian" });
   kitty.save().then(() => console.log("meow"));

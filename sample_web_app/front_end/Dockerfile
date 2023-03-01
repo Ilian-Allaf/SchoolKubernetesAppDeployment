@@ -1,11 +1,8 @@
+# Use an official nginx image as a parent image
 FROM nginx
 
-#RUN adduser --system --group --no-create-home myuser
+# Copy the HTML file to the container
+COPY index.html /usr/share/nginx/html/
 
-#USER myuser
-
-WORKDIR /usr/share/nginx/html
-
-COPY . .
-
+# Expose port 80 for HTTP traffic
 EXPOSE 80
