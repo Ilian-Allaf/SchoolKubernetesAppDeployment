@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: tanguylichau/frontendapp:9.0
+          image: tanguylichau/frontendapp:12.0
           ports:
             - containerPort: 80

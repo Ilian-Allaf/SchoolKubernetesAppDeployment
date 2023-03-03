@@ -11,16 +11,14 @@
     <button id="fetchButton">Fetch Data</button>
   </body>
   <script>
-    const fetchData = () => {
-      fetch("http://backend-service:3000")
-        .then(async (response) => {
-          const jsonResponse = JSON.stringify(await response.json());
-          console.log("response : " + jsonResponse);
-          document.getElementById("app").innerHTML = jsonResponse;
-        })
-        .catch((error) => console.log(error));
+    console.log("Debut script");
+    const fetchData = async () => {
+      const response = await fetch("http://backend-service:3000");
+      const jsonResponse = await response.json();
+      console.log("response : " + jsonResponse);
+      console.log("Stringified responsed : " + JSON.stringify(jsonResponse));
+      document.getElementById("app").innerHTML = jsonResponse;
     };
-
     const fetchButton = document.getElementById("fetchButton");
     fetchButton.addEventListener("click", fetchData);
   </script>
